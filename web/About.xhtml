@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+            <link rel="icon" href="images/favicon.gif" type="image/x-icon"/>
+            <link rel="shortcut icon" href="images/favicon.gif" type="image/x-icon"/> 
+            <script type="text/javascript" src=" https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.js"></script>
+            <script type="text/javascript" src="js/jquery.pikachoose.js"></script>
+            <script language="javascript">
+                            $(document).ready(
+                                    function (){
+                                            $("#pikame").PikaChoose();
+                                    });
+		</script>
+        </meta>
+        
+        <h:outputStylesheet library="css" name="css3.css"/>
+        <h:outputStylesheet library="css" name="styles.css"/>
+        
+  
+    </h:head>
+
+    <h:body>
+
+       <!--start container-->
+    <div id="container">
+
+    <!--start header-->
+
+    <header>
+ 
+    <!--start logo-->
+    <a href="#" id="logo"><img src="resources/images/logo.png" width="350" height="100" alt="logo"/></a>    
+
+	<!--end logo-->
+	
+   <!--start menu-->
+
+	<nav>
+    <ul>
+    
+     <li> <h:link outcome="Home.xhtml" >Home</h:link></li>
+            <li> <h:link outcome="Search.xhtml"  >Search</h:link></li>
+	<li><h:link outcome="About.xhtml" styleClass="current" >About</h:link></li>
+    <li><h:link outcome="Contact.xhtml" >Contact</h:link></li>
+    <li><h:link outcome="Login.xhtml" >Login</h:link></li>
+    </ul>
+    </nav>
+	<!--end menu-->
+	
+
+    <!--end header-->
+	</header>
+
+
+   <!--start intro-->
+
+   <div id="intro">
+   
+   <div class="group_bannner_right">
+       <img src="resources/images/picture.png" width="550" height="316"  alt="baner"></img>
+   </div>
+   
+   <header class="group_bannner_left">
+   <hgroup>
+   <h1>Shelter for basic human needs </h1>
+   <h2>“The little things are infinitely the most important.“ 
+   </h2>
+   </hgroup>
+   </header>
+   </div>
+   <!--end intro-->
+
+   
+   
+   <!--start holder-->
+
+   <div class="holder_content">
+   
+   <section class="group1">
+   <h3>About us</h3>
+   	<p>We are a Team of developers with the challenge for finding a solution of Shelter for Human Needs ,this is a system of locations, for people in need, 
+        these people need food, water or place to live , that we're  finding</p>
+	</section>
+    </div>
+    <!--end holder-->
+
+   
+   
+    </div>
+   <!--end container-->
+   
+   <!--start footer-->
+   <footer>
+   <div class="container">  
+   <div id="FooterTwo"> © 2012 Thelter for humanity </div>
+   <div id="FooterTree"> Java Server Faces, design and code by <a href="http://www.marijazaric.com">Human Teams </a>   </div> 
+   </div>
+   </footer>
+    
+
+    </h:body>
+
+</html>

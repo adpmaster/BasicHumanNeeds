@@ -1,0 +1,17 @@
+/* 
+    Document   : localizer
+    Created on : Jun 3, 2012, 2:59:36 AM
+    Author     : Alison David
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.izquierda{
+    float: left;
+    margin-left: 5px;
+    position:relative;
+}

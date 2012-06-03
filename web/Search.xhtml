@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:m="http://code.google.com/p/gmaps4jsf/"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <link rel="icon" href="images/favicon.gif" type="image/x-icon"/>
+            <link rel="shortcut icon" href="images/favicon.gif" type="image/x-icon"/> 
+            <script type="text/javascript" src=" https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.js"></script>
+            <script type="text/javascript" src="js/jquery.pikachoose.js"></script>
+            
+        <h:outputStylesheet library="css" name="css3.css"/>
+        <h:outputStylesheet library="css" name="styles.css"/>
+    </h:head>
+    <h:body>
+        
+        
+       <!--start container-->
+    <div id="container">
+
+    <!--start header-->
+    
+    
+    <header>
+        
+    <!--start logo-->
+    <a href="#" id="logo"><img src="resources/images/logo.png" width="350" height="100" alt="logo"/></a>    
+
+	<!--end logo-->
+	
+   <!--start menu-->
+
+    <nav>
+    <ul>    
+            
+        <li><h:link outcome="Home.xhtml" >Home</h:link></li>
+        <li><h:link outcome="Search.xhtml" styleClass="current" >Search</h:link></li>
+	<li><h:link outcome="About.xhtml" >About</h:link></li>
+        <li><h:link outcome="Contact.xhtml" >Contact</h:link></li>
+        <li><h:link outcome="Login.xhtml" >Login</h:link></li>
+   
+    </ul>
+    </nav>
+	<!--end menu-->
+	
+
+    <!--end header-->
+	</header>
+    <!--start of map-->
+    <p:gmap  id="mapa" center="18.533826,-69.842723" zoom="13" type="HYBRID"   
+        style="width:600px;height:400px"  
+        model="#{mapBean.simpleModel}" />
+    <!--end of map-->
+    </div>
+   <!--start intro-->
+   
+   <!--end intro-->
+   <div>
+   <h:form prependId="false">  
+       <p:dataTable id="basic" var="shel" value="#{managerController.listOfShelters}">  
+            <p:column id="modelHeader" >  
+            <f:facet name="header" >  
+                  Name
+            </f:facet>  
+                <p:commandLink actionListener="#{managerController.pasarLocation(shel)}" ><h:outputText id="nam" value="#{shel.name}" >
+                    <p:commandButton actionListener="#{managerController.pasarLocation(shel)}" update="mapa"/>
+                    </h:outputText> </p:commandLink>>
+               </p:column > 
+  
+            <p:column>  
+            <f:facet name="header">  
+                    Address  
+            </f:facet>  
+                <h:outputText value="#{shel.address}" /> 
+        </p:column>  
+ 
+    </p:dataTable>  
+</h:form> 
+   </div>
+   <!--start holder-->
+
+   
+   <!--start footer-->
+   <footer>
+   <div  class="container">  
+   <div id="FooterTwo"> © 2012 Thelter for humanity </div>
+   <div id="FooterTree"> Java Server Faces, design and code by <a href="http://www.marijazaric.com">Human Teams </a>   </div> 
+   </div>
+   </footer>
+    
+
+    </h:body>
+
+</html>
